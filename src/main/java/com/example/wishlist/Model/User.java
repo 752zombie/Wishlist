@@ -9,8 +9,6 @@ public class User {
     private String password;
     private int userId;
 
-    // private ArrayList<WishList> wishList = new ArrayList<>();
-
 
     public User(String name, String eMail, String password, int userId) {
         this.name = name;
