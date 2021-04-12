@@ -14,9 +14,13 @@ public class LoginController {
     public String login(@RequestParam("name") String name, @RequestParam("eMail") String eMail,
                         @RequestParam("password") String password, @RequestParam("userId") String userId){
 
-        User user = new User(name, eMail, password, Integer.parseInt(userId));
         UserList userList = new UserList();
+
+
+        User user = new User(name, eMail, password, Integer.parseInt(userId));
         userList.addUser(user);
+
+
         return "login.html";
     }
 }
