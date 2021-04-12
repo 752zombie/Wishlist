@@ -17,6 +17,6 @@ public class LoginController {
         User user = new User(name, eMail, password, Integer.parseInt(userId));
         UserList userList = new UserList();
         userList.addUser(user);
-        return "indsætHtml";
+        return "login.html";
     }
 }
