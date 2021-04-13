@@ -33,6 +33,6 @@ public class LoginController {
         // call to DB class method(add user)
 
 
-        return "redirect:/index.html";
+        return "index.html";
     }
 }
