@@ -14,7 +14,7 @@ public class DatabaseConnection {
         }
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emp_dept", "", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/emp_dept", "root", "notperma");
         }
 
         catch (SQLException e) {
