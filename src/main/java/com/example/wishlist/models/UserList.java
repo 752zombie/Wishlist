@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserList {
 
-    private ArrayList<User> userList;
+    private ArrayList<User> userList = new ArrayList<>();
 
 
     public ArrayList<User> getUserList() {
@@ -16,8 +16,10 @@ public class UserList {
     public void addUser(User user) {
         userList.add(user);
 
-
+        System.out.println(user);
     }
+
+
 
 
 }
