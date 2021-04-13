@@ -1,4 +1,6 @@
-package com.example.wishlist.Model;
+package com.example.wishlist.models;
+
+import com.example.wishlist.models.User;
 
 import java.util.ArrayList;
 
@@ -13,6 +15,8 @@ public class UserList {
 
     public void addUser(User user) {
         userList.add(user);
+
+
     }
 
 

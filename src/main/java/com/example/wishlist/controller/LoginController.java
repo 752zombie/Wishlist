@@ -1,8 +1,8 @@
-package com.example.wishlist.Controller;
+package com.example.wishlist.controller;
 
 
-import com.example.wishlist.Model.User;
-import com.example.wishlist.Model.UserList;
+import com.example.wishlist.models.User;
+import com.example.wishlist.models.UserList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +18,11 @@ public class LoginController {
 
 
         User user = new User(name, eMail, password, Integer.parseInt(userId));
+
+        // do we need a UserList when we add user to DB?
         userList.addUser(user);
+
+        // call to DB class method(add user)
 
 
         return "login.html";
