@@ -15,11 +15,6 @@ public class UserList {
 
     public void addUser(User user) {
         userList.add(user);
-
-        System.out.println(user);
     }
-
-
-
 
 }
