@@ -8,5 +8,23 @@
 
 <h1> Log in page </h1>
 
+<form action="/sign-in-saved" method="post">
+
+    <input type="name" class="form-control" name="name" id="name" placeholder="Navn" autofocus required>
+
+    <input type="email" class="form-control" name="email" id="email" placeholder="Email addresse" required>
+
+    <input type="password" class="form-control" name="password" id="password" placeholder="Adgangskode"
+           required>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="remember-me"> Husk mig
+        </label>
+    </div>
+    <button class="signIn" type="submit">Log ind</button>
+
+</form>
+
 </body>
 </html>
