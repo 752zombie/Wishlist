@@ -9,18 +9,16 @@
    <h1>  create wish </h1>
 
    <form action="/wish-saved" method="post">
-
-       <!-- amount of wishes ??? -->
-
-       <input type="text" class="form-control" name="nameWish" id="nameWish" placeholder="Name" autofocus required>
-
-       <input type="text" class="form-control" name="amount" id="amount" placeholder="How many" required>
-
-       <input type="text" class="form-control" name="linkToWish" id="linkToWish" placeholder="Insert link to wish"
-              required>
+       <input type="text" class="form-control" name="nameWish" id="nameWish" placeholder="Name" autofocus>
+       <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+       <input type="text" class="form-control" name="linkToWish" id="linkToWish" placeholder="Insert link to wish">
+       <button class="saveWish" type="submit">Add wish</button>
+   </form>
 
 
-       <button class="saveWish" type="submit">Save</button>
+   <form action="/return-frontPage" method="get">
+       <button type="submit"> Finish </button>
+   </form>
 
 
 

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class WishListController {
 
+
     @GetMapping("/wish-list")
     public String createWish(){
 
@@ -24,20 +25,24 @@ public class WishListController {
 
     }
 
+
+
     @PostMapping("wish-saved")
-    public String login(@RequestParam("nameWish") String nameWish, @RequestParam("amount") String amount,
+    public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price,
                         @RequestParam("linkToWish") String linkToWish){
 
 
         Wishlist wishList = new Wishlist();
-
-        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(amount));
-
+        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(price));
         wishList.addWish(wish);
 
+        return "wishPage.html";
+    }
 
+    @GetMapping("/return-frontPage")
+    public String fP(){
 
-        return "index.html";
+        return "redirect:/";
     }
 
 }
