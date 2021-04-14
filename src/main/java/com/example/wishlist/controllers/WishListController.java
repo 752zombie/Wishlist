@@ -5,6 +5,7 @@ import com.example.wishlist.models.UserList;
 import com.example.wishlist.models.Wish;
 import com.example.wishlist.models.Wishlist;
 import com.example.wishlist.services.DatabaseConnection;
+import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ public class WishListController {
     @GetMapping("/wish-list")
     public String createWish(){
 
-        DatabaseConnection.getConnection();
+        UserRepository.addUser("Testperson", "Testperson@gmail.com", "1234");
 
         return "wishPage.html";
 
