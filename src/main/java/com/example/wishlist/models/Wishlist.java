@@ -4,21 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Wishlist {
-    private List<Wish> wishes;
+    private ArrayList<Wish> wishes;
 
     public Wishlist() {
-        this.wishes = new ArrayList<Wish>();
-    }
-
-    public Wishlist(List<Wish> wishes) {
-        this.wishes = wishes;
+        this.wishes = new ArrayList<>();
     }
 
     public void addWish(Wish wish) {
         wishes.add(wish);
     }
 
-    public void addWish(String name, String url, int amount) {
-        wishes.add(new Wish(name, url, amount));
-    }
+
 }
