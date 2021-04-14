@@ -25,19 +25,17 @@ public class WishListController {
     }
 
     @PostMapping("wish-saved")
-    public String login(@RequestParam("name") String name, @RequestParam("amount") String amount,
-                        @RequestParam("url") String url, HttpSession session){
+    public String login(@RequestParam("nameWish") String nameWish, @RequestParam("amount") String amount,
+                        @RequestParam("linkToWish") String linkToWish){
+
 
         Wishlist wishList = new Wishlist();
 
-        Wish wish = new Wish(name, url, Integer.parseInt(amount));
+        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(amount));
 
-        // do we need a UserList when we add user to DB?
         wishList.addWish(wish);
 
-        // make call to DB class method(add user)
 
-        session.setAttribute("user", name);
 
         return "index.html";
     }

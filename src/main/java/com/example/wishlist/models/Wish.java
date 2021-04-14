@@ -45,4 +45,14 @@ public class Wish {
     public static void setNextId(int nextId) {
         Wish.nextId = nextId;
     }
+
+    @Override
+    public String toString() {
+        return "Wish{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }
