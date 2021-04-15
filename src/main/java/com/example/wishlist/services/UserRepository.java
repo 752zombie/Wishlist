@@ -15,7 +15,7 @@ public class UserRepository {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
-            String command = String.format("INSERT INTO users (user_name, email, user_password) values ('%s', '%s', MD5('%s'))", name, email, password);
+            String command = String.format("INSERT INTO users (user_name, email, user_password) VALUES ('%s', '%s', MD5('%s'))", name, email, password);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
             return true;
