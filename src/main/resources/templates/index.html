@@ -21,10 +21,15 @@
           <div class="options" th:if="${session.user == null}">
             <a href="/sign-in" methods="get">Sign up</a>
             <a th:text="${session.user}"></a>
-            |
-            <a href="/sign-out" methods="get">Sign out </a> <a href="#"></a>
-            |
-            <a href="/wish-list" methods="get">Creat wish list</a> <a href="#"></a>
+
+          </div>
+          <div class="options" th:if="${session.user != null}">
+            <a th:text="${session.user}"></a>
+            <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
+            <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
+          </div>
+
+
           </div>
         </div>
 
