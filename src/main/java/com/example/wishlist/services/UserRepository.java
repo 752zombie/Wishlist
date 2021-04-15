@@ -5,27 +5,30 @@ import com.example.wishlist.models.UserAttribute;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.NoSuchElementException;
 
 public class UserRepository {
 
-    public static void addUser(String name, String email, String password) {
+    public static boolean addUser(String name, String email, String password) {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
             String command = String.format("INSERT INTO users (user_name, email, user_password) values ('%s', '%s', MD5('%s'))", name, email, password);
-            System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
+            return true;
         }
 
         catch (SQLException e) {
             System.out.println("Error adding user");
+            return false;
         }
     }
 
-    public static void addUser(User user) {
-        addUser(user.getName(), user.getEmail(), user.getPassword());
+    public static boolean addUser(User user) {
+        return addUser(user.getName(), user.getEmail(), user.getPassword());
     }
 
     public static void removeUser(int userid) {
@@ -38,6 +41,7 @@ public class UserRepository {
             command = String.format("DELETE FROM users_wishes WHERE user_id = %d", userid);
             statement = connection.prepareStatement(command);
             statement.execute();
+
         }
 
         catch (SQLException e) {
@@ -72,6 +76,36 @@ public class UserRepository {
         }
     }
 
+    public static User attemptLogin(String email, String password) {
+        Connection connection = DatabaseConnection.getConnection();
+
+        try {
+            String command = String.format("SELECT * FROM users WHERE email = '%s' AND user_password = MD5('%s')", email, password);
+            PreparedStatement statement = connection.prepareStatement(command);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int id = resultSet.getInt("user_id");
+                String name = resultSet.getString("user_name");
+                String userEmail = resultSet.getString("email");
+                String userPassword = resultSet.getString("user_password");
+                User user = new User(name, userEmail, userPassword);
+                user.setId(id);
+                return user;
+            }
+
+        }
+
+        catch (SQLException e) {
+            System.out.println("Something went wrong");
+        }
+
+        throw new NoSuchElementException();
+
+    }
+
+
+
     private static String userAttributeToColumn(UserAttribute attribute) {
         switch (attribute) {
             case name:
@@ -84,4 +118,6 @@ public class UserRepository {
                 return "invalid";
         }
     }
+
+
 }

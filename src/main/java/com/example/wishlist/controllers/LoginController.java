@@ -10,28 +10,48 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.NoSuchElementException;
 
 @Controller
 public class LoginController {
 
-   public UserRepository userRepository;
 
-    @GetMapping("sign-in")
+    @GetMapping("/sign-in")
     public String signIn(){
 
         return "login.html";
     }
 
-    @PostMapping("sign-in-saved")
+    @PostMapping("/sign-in-saved")
     public String login(@RequestParam("name") String name, @RequestParam("email") String eMail,
                         @RequestParam("password") String password, HttpSession session){
 
+        //User created successfully and should now be logged in
+        if (UserRepository.addUser(name, eMail, password)) {
+            session.setAttribute("user", name);
+        }
 
-
-        UserRepository.addUser(name, eMail, password);
-
-        session.setAttribute("user", name);
+        //User already exists
+        else {
+            //add error handling here
+        }
 
         return "index.html";
+    }
+
+    @PostMapping("/sign-in")
+    public String signIn(@RequestParam("email") String email, @RequestParam("password") String password, HttpSession session) {
+
+        try {
+            User user = UserRepository.attemptLogin(email, password);
+            session.setAttribute("user", user.getName());
+            return "index";
+        }
+
+        //incorrect email or password
+        catch (NoSuchElementException e) {
+            //handle this situation here
+            return "login";
+        }
     }
 }
