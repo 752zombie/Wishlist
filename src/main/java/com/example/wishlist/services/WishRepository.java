@@ -10,7 +10,8 @@ public class WishRepository {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
-            String command = String.format("INSERT INTO wishes (product_name, url, quantity, price) values ('%s', '%s', '%d', '%d'", wishName, url, quantity, price);
+
+            String command = String.format("INSERT INTO wishes (product_name, url, quantity, price) values ('%s', '%s', '%d', '%d')", wishName, url, quantity, price);
             System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
