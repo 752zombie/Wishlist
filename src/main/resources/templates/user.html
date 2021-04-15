@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1> Your wish list </h1>
+
+<ul th:each="wishList : ${wishList}">
+    <li th:text="${wishList}"></li>
+</ul>
+
+
+  <p> What do you want to change? </p>
+  <div>
+    <form action="/changeUserName" method="get">
+<button type="submit"> Username </button>
+    </form>
+ </div>
+
+  <div>
+      <form action="/changePassword" method="get">
+          <button type="submit"> Password </button>
+      </form>
+  </div>
+
+  <div>
+      <form action="/changeEmail" method="get">
+          <button type="submit"> Email </button>
+      </form>
+  </div>
+
+</body>
+</html>

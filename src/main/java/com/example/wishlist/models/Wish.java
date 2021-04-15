@@ -6,12 +6,15 @@ public class Wish {
     private int amount;
     private String name;
     private String url;
+    private int price;
 
-    public Wish(String name, String url, int amount) {
+    public Wish(String name, String url, int amount, int price) {
         this.amount = amount;
         this.name = name;
         this.url = url;
+        this.price = price;
         this.id = ++nextId;
+
     }
 
     public int getAmount() {

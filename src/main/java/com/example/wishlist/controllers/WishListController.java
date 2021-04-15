@@ -27,12 +27,12 @@ public class WishListController {
 
 
     @PostMapping("wish-saved")
-    public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price,
+    public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price, @RequestParam("amount") String amount,
                         @RequestParam("linkToWish") String linkToWish){
 
 
         Wishlist wishList = new Wishlist();
-        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(price));
+        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(amount), Integer.parseInt(price));
         wishList.addWish(wish);
 
         return "wishPage.html";

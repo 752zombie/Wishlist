@@ -3,6 +3,7 @@ package com.example.wishlist.controllers;
 
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserList;
+import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
+   public UserRepository userRepository;
 
     @GetMapping("sign-in")
     public String signIn(){
@@ -24,14 +26,9 @@ public class LoginController {
     public String login(@RequestParam("name") String name, @RequestParam("email") String eMail,
                         @RequestParam("password") String password, HttpSession session){
 
-        UserList userList = new UserList();
 
-        User user = new User(name, eMail, password);
 
-        // do we need a UserList when we add user to DB?
-        userList.addUser(user);
-
-        // make call to DB class method(add user)
+        UserRepository.addUser(name, eMail, password);
 
         session.setAttribute("user", name);
 

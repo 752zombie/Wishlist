@@ -9,10 +9,12 @@ public class User {
     private String password;
 
 
+
     public User(String name, String eMail, String password) {
         this.name = name;
         this.eMail = eMail;
         this.password = password;
+
 
     }
 

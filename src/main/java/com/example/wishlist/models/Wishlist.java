@@ -12,7 +12,16 @@ public class Wishlist {
 
     public void addWish(Wish wish) {
         wishes.add(wish);
+
+
+
     }
 
+    public ArrayList<Wish> getWishes(){
+
+        System.out.println(wishes.get(0).getName());
+
+        return wishes;
+    }
 
 }
