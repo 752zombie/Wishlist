@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign up</title>
 </head>
 <body>
+<form action="/sign-up" method="post">
 
-<h1> Log in page </h1>
-
-<form action="/sign-in" method="post">
+    <input type="name" class="form-control" name="name" id="name" placeholder="Name" autofocus required>
 
     <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required>
 
@@ -20,11 +19,8 @@
             <input type="checkbox" value="remember-me"> Husk mig
         </label>
     </div>
-    <button class="signIn" type="submit">Sign in</button>
+    <button class="signIn" type="submit">Create account</button>
 
 </form>
-
-    <a href="/sign-up" methods="get">Not a user yet? Click here to sign up</a>
-
 </body>
 </html>

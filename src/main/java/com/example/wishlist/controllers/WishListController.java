@@ -1,10 +1,13 @@
 package com.example.wishlist.controllers;
 
+import com.example.wishlist.models.User;
 import com.example.wishlist.services.WishRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class WishListController {
@@ -21,10 +24,10 @@ public class WishListController {
 
     @PostMapping("wish-saved")
     public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price, @RequestParam("quantity") String quantity,
-                        @RequestParam("linkToWish") String linkToWish){
+                             @RequestParam("linkToWish") String linkToWish, HttpSession session){
 
-
-    WishRepository.addWish(nameWish, Integer.parseInt(price), Integer.parseInt(quantity), linkToWish);
+    User user = (User) session.getAttribute("user");
+    WishRepository.addWish(nameWish, Integer.parseInt(price), Integer.parseInt(quantity), linkToWish, user.getId());
 
         return "wishPage.html";
     }

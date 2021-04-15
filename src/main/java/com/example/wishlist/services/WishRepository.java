@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class WishRepository {
 
-    public static void addWish(String wishName, int quantity, int price, String url) {
+    public static void addWish(String wishName, int quantity, int price, String url, int userId) {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
 
-            String command = String.format("INSERT INTO wishes (product_name, url, quantity, price) values ('%s', '%s', '%d', '%d')", wishName, url, quantity, price);
+            String command = String.format("INSERT INTO wishes (product_name, url, quantity, price, user_id) values ('%s', '%s', '%d', '%d', %d)", wishName, url, quantity, price, userId);
             System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();

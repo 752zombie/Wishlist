@@ -22,13 +22,14 @@ public class LoginController {
         return "login.html";
     }
 
-    @PostMapping("/sign-in-saved")
+    @PostMapping("/sign-up")
     public String login(@RequestParam("name") String name, @RequestParam("email") String eMail,
                         @RequestParam("password") String password, HttpSession session){
 
         //User created successfully and should now be logged in
         if (UserRepository.addUser(name, eMail, password)) {
-            session.setAttribute("user", name);
+            User user = UserRepository.attemptLogin(eMail, password);
+            session.setAttribute("user", user);
         }
 
         //User already exists
@@ -44,7 +45,7 @@ public class LoginController {
 
         try {
             User user = UserRepository.attemptLogin(email, password);
-            session.setAttribute("user", user.getName());
+            session.setAttribute("user", user);
             return "index";
         }
 
@@ -54,4 +55,10 @@ public class LoginController {
             return "login";
         }
     }
+
+    @GetMapping("/sign-up")
+    public String signUp() {
+        return "signup";
+    }
+
 }
