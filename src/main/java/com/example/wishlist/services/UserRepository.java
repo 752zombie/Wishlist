@@ -5,7 +5,9 @@ import com.example.wishlist.models.UserAttribute;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.NoSuchElementException;
 
 public class UserRepository {
 
@@ -74,6 +76,34 @@ public class UserRepository {
         }
     }
 
+    public static User attemptLogin(String email, String password) {
+        Connection connection = DatabaseConnection.getConnection();
+
+        try {
+            String command = String.format("SELECT * FROM users WHERE email = '%s' AND user_password = MD5('%s')", email, password);
+            PreparedStatement statement = connection.prepareStatement(command);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int id = resultSet.getInt("user_id");
+                String name = resultSet.getString("user_name");
+                String userEmail = resultSet.getString("email");
+                String userPassword = resultSet.getString("user_password");
+                User user = new User(name, userEmail, userPassword);
+                user.setId(id);
+                return user;
+            }
+
+        }
+
+        catch (SQLException e) {
+            System.out.println("Something went wrong");
+        }
+
+        throw new NoSuchElementException();
+
+    }
+
 
 
     private static String userAttributeToColumn(UserAttribute attribute) {
@@ -88,4 +118,6 @@ public class UserRepository {
                 return "invalid";
         }
     }
+
+
 }
