@@ -35,13 +35,12 @@ public class UserRepository {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
+            //Wishes for the the user needs to be removed first because of foreign key
+            WishRepository.deleteWishlist(userid);
+
             String command = String.format("DELETE FROM users WHERE user_id = %d", userid);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
-            command = String.format("DELETE FROM users_wishes WHERE user_id = %d", userid);
-            statement = connection.prepareStatement(command);
-            statement.execute();
-
         }
 
         catch (SQLException e) {

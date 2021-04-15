@@ -2,27 +2,26 @@ package com.example.wishlist.models;
 
 public class Wish {
     private int id;
-    private static int nextId = 0;
-    private int amount;
+    private int quantity;
     private String name;
     private String url;
     private int price;
 
-    public Wish(String name, String url, int amount, int price) {
-        this.amount = amount;
+    public Wish(int id, String name, String url, int amount, int price) {
+        this.quantity = amount;
         this.name = name;
         this.url = url;
         this.price = price;
-        this.id = ++nextId;
+        this.id = id;
 
     }
 
-    public int getAmount() {
-        return amount;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -41,19 +40,11 @@ public class Wish {
         this.url = url;
     }
 
-    public static int getNextId() {
-        return nextId;
-    }
-
-    public static void setNextId(int nextId) {
-        Wish.nextId = nextId;
-    }
-
     @Override
     public String toString() {
         return "Wish{" +
                 "id=" + id +
-                ", amount=" + amount +
+                ", amount=" + quantity +
                 ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 '}';

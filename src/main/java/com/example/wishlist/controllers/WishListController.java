@@ -1,18 +1,10 @@
 package com.example.wishlist.controllers;
 
-import com.example.wishlist.models.User;
-import com.example.wishlist.models.UserList;
-import com.example.wishlist.models.Wish;
-import com.example.wishlist.models.Wishlist;
-import com.example.wishlist.services.DatabaseConnection;
-import com.example.wishlist.services.UserRepository;
 import com.example.wishlist.services.WishRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class WishListController {
@@ -32,7 +24,7 @@ public class WishListController {
                         @RequestParam("linkToWish") String linkToWish){
 
 
-    WishRepository.addWishes(nameWish, Integer.parseInt(price), Integer.parseInt(quantity), linkToWish);
+    WishRepository.addWish(nameWish, Integer.parseInt(price), Integer.parseInt(quantity), linkToWish);
 
         return "wishPage.html";
     }
