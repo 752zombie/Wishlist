@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class FrontPageController {
 
+
     @GetMapping("/sign-out")
     public String signOut(HttpSession session) {
 

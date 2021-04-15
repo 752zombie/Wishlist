@@ -8,19 +8,17 @@
 
    <h1>  create wish </h1>
 
-   <form action="/wish-saved" method="post">
-       <input type="text" class="form-control" name="nameWish" id="nameWish" placeholder="Name" autofocus>
-       <input type="text" class="form-control" name="price" id="price" placeholder="Price">
-       <input type="text" class="form-control" name="linkToWish" id="linkToWish" placeholder="Insert link to wish">
-       <button class="saveWish" type="submit">Add wish</button>
-   </form>
+   <form action="/sign-in-saved" method="post">
+
+       <input type="wish1" class="form-control" name="wish1" id="wish1" placeholder="wish1" autofocus required>
+
+       <input type="wish2" class="form-control" name="wish2" id="wish2" placeholder="wish2" required>
+
+       <input type="wish3" class="wish3" name="wish3" id="wish3" placeholder="wish3"
+              required>
 
 
-   <form action="/return-frontPage" method="get">
-       <button type="submit"> Finish </button>
-   </form>
-
-
+       <button class="saveWish" type="submit">Save</button>
 
 </body>
 </html>
