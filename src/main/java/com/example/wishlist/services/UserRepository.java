@@ -9,23 +9,24 @@ import java.sql.SQLException;
 
 public class UserRepository {
 
-    public static void addUser(String name, String email, String password) {
+    public static boolean addUser(String name, String email, String password) {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
             String command = String.format("INSERT INTO users (user_name, email, user_password) values ('%s', '%s', MD5('%s'))", name, email, password);
-            System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
+            return true;
         }
 
         catch (SQLException e) {
             System.out.println("Error adding user");
+            return false;
         }
     }
 
-    public static void addUser(User user) {
-        addUser(user.getName(), user.getEmail(), user.getPassword());
+    public static boolean addUser(User user) {
+        return addUser(user.getName(), user.getEmail(), user.getPassword());
     }
 
     public static void removeUser(int userid) {
@@ -38,6 +39,7 @@ public class UserRepository {
             command = String.format("DELETE FROM users_wishes WHERE user_id = %d", userid);
             statement = connection.prepareStatement(command);
             statement.execute();
+
         }
 
         catch (SQLException e) {
@@ -71,6 +73,8 @@ public class UserRepository {
             System.out.println("Error updating user info");
         }
     }
+
+
 
     private static String userAttributeToColumn(UserAttribute attribute) {
         switch (attribute) {
