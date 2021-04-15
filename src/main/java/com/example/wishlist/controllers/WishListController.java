@@ -17,6 +17,8 @@ import javax.servlet.http.HttpSession;
 public class WishListController {
 
 
+
+
     @GetMapping("/wish-list")
     public String createWish(){
 
@@ -31,9 +33,7 @@ public class WishListController {
                         @RequestParam("linkToWish") String linkToWish){
 
 
-        Wishlist wishList = new Wishlist();
-        Wish wish = new Wish(nameWish, linkToWish, Integer.parseInt(amount), Integer.parseInt(price));
-        wishList.addWish(wish);
+
 
         return "wishPage.html";
     }
