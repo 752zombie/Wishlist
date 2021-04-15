@@ -20,8 +20,6 @@ public class WishListController {
     @GetMapping("/wish-list")
     public String createWish(){
 
-        UserRepository.addUser("Testperson", "Testperson@gmail.com", "1234");
-
         return "wishPage.html";
 
     }

@@ -3,7 +3,7 @@ package com.example.wishlist.models;
 import java.util.ArrayList;
 
 public class User {
-
+    private int id;
     private String name;
     private String eMail;
     private String password;
@@ -14,6 +14,14 @@ public class User {
         this.eMail = eMail;
         this.password = password;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
