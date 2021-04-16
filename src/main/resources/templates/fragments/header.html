@@ -1,0 +1,34 @@
+<header th:fragment="header"
+        xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div class="box-area">
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <a href="/">
+                        <img src="img/logo.jpeg" alt="Frontpage" style="max-width: 60%; min-height: 100%">
+                    </a>
+                </div>
+
+                <nav>
+                    <div class="dividers">
+                        <div class="options" th:if="${session.user == null}">
+                            <a href="/sign-in" methods="get">Sign in</a>
+                            <a th:text="${session.user}"></a>
+
+                        </div>
+                        <div class="options" th:if="${session.user != null}">
+                            <a href="/changeUserInfo" th:text="${session.user.getName()}"></a>
+                            <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
+                            <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
+                        </div>
+
+
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    </div>
+</header>

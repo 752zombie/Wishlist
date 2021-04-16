@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Frontpage</title>
@@ -7,68 +7,33 @@
 </head>
 <body>
 
-<div class="box-area">
-  <header>
-    <div class="wrapper">
-      <div class="logo">
-        <a href="/">
-          <img src="img/logo.jpeg" alt="Frontpage" style="max-width: 130%; min-height: 150%">
-        </a>
-      </div>
-
-      <nav>
-        <div class="dividers">
-          <div class="options" th:if="${session.user == null}">
-            <a href="/sign-in" methods="get">Sign in</a>
-            <a th:text="${session.user}"></a>
-
-          </div>
-          <div class="options" th:if="${session.user != null}">
-            <a href="/changeUserInfo" th:text="${session.user.getName()}"></a>
-            <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
-            <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
-          </div>
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
 
 
-          </div>
-      </nav>
-        </div>
-  </header>
-    </div>
-
-</div>
-</header>
-<div class="banner-area">
-  <div class="wrapper">
-    <h2>WISH LIST</h2>
-  </div>
-</div>
 <div class="white-bar"></div>
 </div>
-
-
-
 
 <div class="content-area">
   <div class="wrapper">
     <h2>Why Wishlist?</h2>
-    <p>spar tid og undgå at købe uønsket gaver!
-    </p>
+    <p>spar tid og undgå at købe uønsket gaver!</p>
   </div>
 </div>
 
-<div class="noncontent-area-mid" style="height: 100px">
-</div>
 
 <div class="content-area">
   <div class="wrapper">
-    <h2>Signup now!</h2>
-    <p>SignUp now and save 15% on your next order!
-    </p>
+    <h2>SignUp now!</h2>
+    <p>SignUp now and save 15% on your next order!</p>
+
+    </form>
+    <a href="/sign-up" class="button" methods="get"> Click here to sign up</a>
+
   </div>
 </div>
 
-<div class="noncontent-area-mid" style="height: 650px">
+<div class="noncontent-area-mid" style="height: 450px">
 </div>
 
 
@@ -77,7 +42,8 @@
 <div class="footer">
   <p> WISHLIST • LYGTEN 37, 2400 KØBENHAVN NV• E-MAIL: INFO@WISHLIST.DK • TLF: +45 46 46 07 00 </p>
 </div>
-
+<!--footer.html  that's here  -->
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
 

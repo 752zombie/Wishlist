@@ -2,7 +2,6 @@ package com.example.wishlist.controllers;
 
 
 import com.example.wishlist.models.User;
-import com.example.wishlist.models.UserList;
 import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
