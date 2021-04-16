@@ -24,7 +24,7 @@
 
           </div>
           <div class="options" th:if="${session.user != null}">
-            <a href="/changeUserInfo" th:text="${session.user.getName()}"></a>
+            <a href="/profile" th:text="${session.user.getName()}"></a>
             <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
             <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
           </div>
@@ -52,7 +52,7 @@
 <div class="content-area">
   <div class="wrapper">
     <h2>Why Wishlist?</h2>
-    <p>spar tid og undgå at købe uønsket gaver!
+    <p>Save time and avoid buying unwanted gifts!
     </p>
   </div>
 </div>
@@ -75,7 +75,7 @@
 
 
 <div class="footer">
-  <p> WISHLIST • LYGTEN 37, 2400 KØBENHAVN NV• E-MAIL: INFO@WISHLIST.DK • TLF: +45 46 46 07 00 </p>
+  <p> WISHLIST • LYGTEN 37, 2400 KØBENHAVN NV• E-MAIL: INFO@WISHLIST.DK • Phone number: +45 46 46 07 00 </p>
 </div>
 
 </body>

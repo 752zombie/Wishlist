@@ -7,28 +7,23 @@
 <body>
 
 
-<h1> Your wish list </h1>
-
-<ul th:each="wishList : ${wishList}">
-    <li th:text="${wishList}"></li>
-</ul>
 
 
   <p> What do you want to change? </p>
   <div>
-    <form action="/changeUserName" method="get">
+    <form action="/change-user-name" method="get">
 <button type="submit"> Username </button>
     </form>
  </div>
 
   <div>
-      <form action="/changePassword" method="get">
+      <form action="/change-password" method="get">
           <button type="submit"> Password </button>
       </form>
   </div>
 
   <div>
-      <form action="/changeEmail" method="get">
+      <form action="/change-email" method="get">
           <button type="submit"> Email </button>
       </form>
   </div>
