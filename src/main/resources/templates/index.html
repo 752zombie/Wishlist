@@ -6,38 +6,43 @@
   <link rel="stylesheet" href="frontpage.css">
 </head>
 <body>
-    <!--header.html  that's here  -->
-    <div th:replace="fragments/header :: header"></div>
-    <div class="options" th:if="${session.user == null}">
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
 
 
-    <div class="content-area">
-        <div class="wrapper">
-            <h2>Why Wishlist?</h2>
-            <p>Create your wishlist and share it with family and friends and let friends
-                and family share theirs with you. Save time and money With our digital
-                wishlist and get or buy the perfect gifths to your loved ones
-            </p>
-        </div>
-    </div>
+
+<div class="content-area">
+  <div class="wrapper">
+    <h2>Why Wishlist?</h2>
+    <p>Create your wishlist and share it with family and friends and let friends
+       and family share theirs with you. Save time and money With our digital
+       wishlist and get or buy the perfect gifths to your loved ones </p>
+  </div>
+</div>
 
 
-    <div class="content-area">
-        <div class="wrapper">
-          <h2>Signup now!</h2>
-          <p>Don't miss out on great deals and discounts! SignUp now and save 15% on your next order!
-          <br> 1. Signup  2. Create your wishlist 3. Share it with family and friends.</p>
-          <a href="/sign-up" class="signup-fp" methods="get"> Click here to sign up</a>
-        </div>
-    </div>
-    </div>
+<div class="content-area">
+  <div class="wrapper">
+    <h2>Signup now!</h2>
+    <p>Don't miss out on great deals and discounts! SignUp now and save 15% on your next order!
+   <br> 1. Signup  2. Create your wishlist 3. Share it with family and friends.</p>
 
-    <div class="noncontent-area-mid" style="height: 650px">
-    </div>
 
-    <div class="footer">
-         <p> WISHLIST • LYGTEN 37, 2400 KØBENHAVN NV• E-MAIL: INFO@WISHLIST.DK • TLF: +45 46 46 07 00 </p>
-    </div>
+
+    <a href="/sign-up" class="signup-fp" methods="get"> Click here to sign up</a>
+
+  </div>
+</div>
+
+<div class="noncontent-area-mid" style="height: 650px">
+</div>
+
+
+
+
+<div class="footer">
+  <p> WISHLIST • LYGTEN 37, 2400 KØBENHAVN NV• E-MAIL: INFO@WISHLIST.DK • TLF: +45 46 46 07 00 </p>
+</div>
 
 </body>
 </html>

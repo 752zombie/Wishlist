@@ -1,7 +1,6 @@
 package com.example.wishlist.services;
 
 import com.example.wishlist.models.Wish;
-import com.example.wishlist.models.Wishlist;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,12 +19,15 @@ public class WishRepository {
             System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
+
+
         }
 
         catch (SQLException e) {
             System.out.println("Error adding wish");
         }
     }
+
 
     public static void removeWish(int wishId) {
         Connection connection = DatabaseConnection.getConnection();
@@ -55,12 +57,12 @@ public class WishRepository {
         }
     }
 
-    public static Wishlist getWishList(int userid) {
+    public static ArrayList<Wish> getWishList(int userid) {
         Connection connection = DatabaseConnection.getConnection();
-        Wishlist wishlist = new Wishlist();
+        ArrayList<Wish> wishlist = new ArrayList<>();
 
         try {
-            ArrayList<Wish> wishes = new ArrayList<>();
+
             String command = String.format("SELECT * FROM wishes WHERE user_id = %d", userid);
             PreparedStatement statement = connection.prepareStatement(command);
             ResultSet resultSet = statement.executeQuery();
@@ -71,7 +73,7 @@ public class WishRepository {
                 String url =  resultSet.getString("url");
                 int quantity = resultSet.getInt("quantity");
                 int price = resultSet.getInt("price");
-                wishlist.addWish(new Wish(id, product, url, quantity, price));
+                wishlist.add(new Wish(id, product, url, quantity, price));
             }
         }
 

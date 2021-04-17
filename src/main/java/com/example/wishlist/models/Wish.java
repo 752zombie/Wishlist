@@ -7,21 +7,13 @@ public class Wish {
     private String url;
     private int price;
 
-    public Wish(int id, String name, String url, int amount, int price) {
-        this.quantity = amount;
+    public Wish(int id, String name, String url, int quantity, int price) {
+        this.quantity = quantity;
         this.name = name;
         this.url = url;
         this.price = price;
         this.id = id;
 
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public String getName() {
@@ -32,12 +24,17 @@ public class Wish {
         this.name = name;
     }
 
-    public String getUrl() {
+    public int getPrice() {
+        return price;
+    }
+    public String getUrl(){
+
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public int getQuantity(){
+
+        return quantity;
     }
 
     @Override

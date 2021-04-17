@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="frontpage.css">
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
-<div class="content-area">
 
 
-  <h3> What do you want to change? </h3>
+
+
+  <p> What do you want to change? </p>
   <div>
     <form action="/change-user-name" method="get">
-      <div>
-          <button class=signup type="submit"> Username </button>
-      </div>
+<button type="submit"> Username </button>
     </form>
  </div>
 
   <div>
       <form action="/change-password" method="get">
-          <button class=signup type="submit"> Password </button>
+          <button type="submit"> Password </button>
       </form>
   </div>
 
   <div>
       <form action="/change-email" method="get">
-          <button class=signup type="submit"> Email </button>
+          <button type="submit"> Email </button>
       </form>
   </div>
-</div>
+
 </body>
 </html>
