@@ -45,7 +45,7 @@ public class LoginController {
         try {
             User user = UserRepository.attemptLogin(email, password);
             session.setAttribute("user", user);
-            return "index";
+            return  "redirect:/";
         }
 
         //incorrect email or password

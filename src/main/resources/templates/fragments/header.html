@@ -17,10 +17,14 @@
                         </div>
 
                         <div class="options" th:if="${session.user != null}">
-                            <a href="/changeUserInfo" th:text="${session.user.getName()}"></a>
-                            <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
-                            <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
+                            <a href="/change-user-info" class="pnav" th:text="${session.user.getName()}"></a>
+                            |
+                            <a href="/sign-out"class="pnav" methods="get"> Sign out </a> <a href="#"></a>
+                            |
+                            <a href="/wish-list"class="pnav" methods="get"> Create wish list</a> <a href="#"></a>
                         </div>
+
+
                     </div>
                 </nav>
             </div>

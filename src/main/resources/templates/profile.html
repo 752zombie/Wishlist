@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Profile page</title>
+    <link rel="stylesheet" href="frontpage.css">
 </head>
 <body>
+<div th:replace="fragments/header :: header"></div>
 <a href="/wish-list" methods="get">Edit wishlist</a>
 <a href="/change-user-info" methods="get">Change name, email or password</a>
 </body>
