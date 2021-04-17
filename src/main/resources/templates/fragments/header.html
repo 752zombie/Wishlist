@@ -17,7 +17,7 @@
                         </div>
 
                         <div class="options" th:if="${session.user != null}">
-                            <a href="/change-user-info" class="pnav" th:text="${session.user.getName()}"></a>
+                            <a href="/profile" class="pnav" th:text="${session.user.getName()}"></a>
                             |
                             <a href="/sign-out"class="pnav" methods="get"> Sign out </a> <a href="#"></a>
                             |
