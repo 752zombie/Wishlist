@@ -2,7 +2,6 @@ package com.example.wishlist.controllers;
 
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.Wish;
-import com.example.wishlist.models.Wishlist;
 import com.example.wishlist.services.WishRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,13 +41,6 @@ public class WishListController {
        User user = (User) session.getAttribute("user");
 
        ArrayList<Wish> wishlist = WishRepository.getWishList(user.getId());
-
-
-        for (Wish wish : wishlist) {
-            System.out.println(wish.getName() + " " + wish.getPrice());
-        }
-
-        System.out.println(user.getId() + user.getName());
 
        model.addAttribute("wishlist", wishlist);
 

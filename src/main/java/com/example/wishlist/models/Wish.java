@@ -16,14 +16,6 @@ public class Wish {
 
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getName() {
         return name;
     }
@@ -32,16 +24,17 @@ public class Wish {
         this.name = name;
     }
 
-    public String getUrl() {
+    public int getPrice() {
+        return price;
+    }
+    public String getUrl(){
+
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+    public int getQuantity(){
 
-    public int getPrice() {
-        return price;
+        return quantity;
     }
 
     @Override

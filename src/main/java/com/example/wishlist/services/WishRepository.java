@@ -1,9 +1,6 @@
 package com.example.wishlist.services;
 
 import com.example.wishlist.models.Wish;
-import com.example.wishlist.models.Wishlist;
-
-import com.example.wishlist.models.Wish;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
