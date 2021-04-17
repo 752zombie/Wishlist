@@ -1,7 +1,5 @@
 package com.example.wishlist.services;
 
-import com.example.wishlist.controllers.UserController;
-import com.example.wishlist.controllers.WishListController;
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserAttribute;
 

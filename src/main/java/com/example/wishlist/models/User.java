@@ -1,9 +1,5 @@
 package com.example.wishlist.models;
 
-import com.example.wishlist.controllers.UserController;
-
-import java.util.ArrayList;
-
 public class User {
     private int id;
     private String name;

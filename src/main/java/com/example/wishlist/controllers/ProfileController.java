@@ -5,22 +5,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UserController {
+public class ProfileController {
 
 
 
     @GetMapping("changeUserInfo")
     public String userInfo(Model model){
 
-       // ArrayList<Wish> wishes = wishlist.getWishes();
-
-        // model.addAttribute(wishes);
-
         return "user.html";
     }
 
 
+    @GetMapping("/change-user-info")
+    public String changeSettings(){
 
+        return "profile.html";
 
+    }
 
 }
