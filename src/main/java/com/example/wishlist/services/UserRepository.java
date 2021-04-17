@@ -2,11 +2,10 @@ package com.example.wishlist.services;
 
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserAttribute;
+import com.example.wishlist.models.Wish;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class UserRepository {
@@ -19,9 +18,7 @@ public class UserRepository {
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
             return true;
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Error adding user");
             return false;
         }
@@ -41,9 +38,7 @@ public class UserRepository {
             String command = String.format("DELETE FROM users WHERE user_id = %d", userid);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Error deleting user");
         }
     }
@@ -61,16 +56,12 @@ public class UserRepository {
 
             if (column.equals("user_password")) {
                 command = String.format("UPDATE users SET user_password = MD5('%s') WHERE user_id = %d", newValueOfAttribute, userId);
-            }
-
-            else {
+            } else {
                 command = String.format("UPDATE users SET %s = '%s' WHERE user_id = %d", column, newValueOfAttribute, userId);
             }
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Error updating user info");
         }
     }
@@ -95,9 +86,7 @@ public class UserRepository {
                 return user;
             }
 
-        }
-
-        catch (SQLException e) {
+        } catch (SQLException e) {
 
             System.out.println("Something went wrong");
         }
@@ -106,6 +95,51 @@ public class UserRepository {
 
     }
 
+
+    public static void shareWishlist(String username, ArrayList<Wish> wishes) {
+
+        Connection connection = DatabaseConnection.getConnection();
+
+        int userId = getUserId(username);
+
+        System.out.println(userId);
+/*
+        try {
+            for (int i = 0; i < wishes.size(); i++) {
+
+                String command = String.format("INSERT INTO shared_wishlist (username, email, user_password) VALUES ('%s', '%s', MD5('%s'))", name);
+                PreparedStatement statement = connection.prepareStatement(command);
+                statement.execute();
+            }
+        } catch (SQLException e) {
+            System.out.println("Error adding user");
+
+        }
+
+ */
+    }
+
+    private static int getUserId(String username) {
+
+        Connection connection = DatabaseConnection.getConnection();
+
+
+        try {
+            String command = String.format("SELECT  FROM users WHERE username = '%s')", username);
+            PreparedStatement statement = connection.prepareStatement(command);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int id = resultSet.getInt("user_id");
+
+
+                return id;
+            }
+        } catch (SQLException s) {
+            System.out.println("Something went wrong finding user id");
+        }
+        return 0;
+    }
 
 
     private static String userAttributeToColumn(UserAttribute attribute) {

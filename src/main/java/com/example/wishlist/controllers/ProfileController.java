@@ -10,9 +10,9 @@ public class ProfileController {
 
 
     @GetMapping("changeUserInfo")
-    public String userInfo(Model model){
+    public String userInfo(){
 
-        return "user.html";
+        return "profile.html";
     }
 
 

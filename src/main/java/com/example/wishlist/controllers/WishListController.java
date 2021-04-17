@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 @Controller
 public class WishListController {
@@ -29,10 +30,19 @@ public class WishListController {
     public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price, @RequestParam("quantity") String quantity,
                              @RequestParam("linkToWish") String linkToWish, HttpSession session){
 
-    User user = (User) session.getAttribute("user");
-    WishRepository.addWish(nameWish, Integer.parseInt(quantity), Integer.parseInt(price), linkToWish, user.getId());
+   try {
 
-        return "createWish.html";
+       User user = (User) session.getAttribute("user");
+       WishRepository.addWish(nameWish, Integer.parseInt(quantity), Integer.parseInt(price), linkToWish, user.getId());
+
+
+       return "createWish.html";
+   }
+
+   catch (NumberFormatException n){
+
+       return "wishFailed.html";
+   }
     }
 
     @GetMapping("see-wishlist")
