@@ -1,5 +1,7 @@
 package com.example.wishlist.models;
 
+import com.example.wishlist.controllers.UserController;
+
 import java.util.ArrayList;
 
 public class User {
@@ -7,7 +9,6 @@ public class User {
     private String name;
     private String eMail;
     private String password;
-
 
 
     public User(String name, String eMail, String password) {
@@ -22,9 +23,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) { this.id = id; }
 
     public String getName() {
         return name;
@@ -37,7 +36,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-
 
     public void setName(String name) {
         this.name = name;

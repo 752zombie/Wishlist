@@ -1,5 +1,7 @@
 package com.example.wishlist.services;
 
+import com.example.wishlist.controllers.UserController;
+import com.example.wishlist.controllers.WishListController;
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserAttribute;
 
@@ -78,6 +80,7 @@ public class UserRepository {
     public static User attemptLogin(String email, String password) {
         Connection connection = DatabaseConnection.getConnection();
 
+
         try {
             String command = String.format("SELECT * FROM users WHERE email = '%s' AND user_password = MD5('%s')", email, password);
             PreparedStatement statement = connection.prepareStatement(command);
@@ -90,6 +93,7 @@ public class UserRepository {
                 String userPassword = resultSet.getString("user_password");
                 User user = new User(name, userEmail, userPassword);
                 user.setId(id);
+
                 return user;
             }
 

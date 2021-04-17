@@ -40,6 +40,10 @@ public class Wish {
         this.url = url;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Wish{" +

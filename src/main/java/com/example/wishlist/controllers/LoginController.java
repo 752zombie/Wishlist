@@ -29,6 +29,8 @@ public class LoginController {
         if (UserRepository.addUser(name, eMail, password)) {
             User user = UserRepository.attemptLogin(eMail, password);
             session.setAttribute("user", user);
+
+
         }
 
         //User already exists

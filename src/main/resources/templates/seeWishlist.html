@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul th:each="wish : ${wishlist}">
+    <li>
+        <div class="wishlist">
+            <h1 class="wish-name" th:text="${wish.name}"></h1>
+            <label for="wish-price">Price: </label>
+            <span class="wish-price" id="wish-price" th:text="${wish.price}"></span><br>
+            <label for="wish-url"> Link: </label>
+            <span class="wish-url" id="wish-url" th:text="${wish.url}"></span><br>
+            <label for="wish-quantity"> Quantity: </label>
+            <span class="wish-quantity" id="wish-quantity" th:text="${wish.quantity}"></span><br>
+        </div>
+    </li>
+</ul>
+
+
+<form action="/return-frontPage" method="get">
+    <button type="submit"> Return </button>
+</form>
+
+
+</body>
+</html>
