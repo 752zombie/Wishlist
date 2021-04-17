@@ -7,8 +7,8 @@ public class Wish {
     private String url;
     private int price;
 
-    public Wish(int id, String name, String url, int amount, int price) {
-        this.quantity = amount;
+    public Wish(int id, String name, String url, int quantity, int price) {
+        this.quantity = quantity;
         this.name = name;
         this.url = url;
         this.price = price;

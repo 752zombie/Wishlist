@@ -6,20 +6,24 @@
 </head>
 <body>
 
-<form action="/return-frontPage" method="get">
-    <button type="submit"> Return </button>
-</form>
+
+    <div>
+        <a href="/return-frontPage" methods="get"> Return </a>
+        <a href="/deleteWishList" methods="get"> Delete list</a>
+        <a href="/wish-list" methods="get"> Add wishes</a>
+        <a href="/share-list" methods="get"> Share list </a>
+    </div>
 
 <ul th:each="wish : ${wishlist}">
     <li>
         <div class="wishlist">
             <h1 class="wish-name" th:text="${wish.name}"></h1>
-            <label for="wish-price">Price(kr): </label>
-            <span class="wish-price" id="wish-price" th:text="${wish.price}"></span><br>
-            <label for="wish-url"> Link: </label>
-            <span class="wish-url" id="wish-url" th:text="${wish.url}"></span><br>
             <label for="wish-quantity"> Quantity: </label>
             <span class="wish-quantity" id="wish-quantity" th:text="${wish.quantity}"></span><br>
+            <label for="wish-url"> Link: </label>
+            <span class="wish-url" id="wish-url" th:text="${wish.url}"></span><br>
+            <label for="wish-price">Price(kr): </label>
+            <span class="wish-price" id="wish-price" th:text="${wish.price}"></span><br>
         </div>
     </li>
 </ul>

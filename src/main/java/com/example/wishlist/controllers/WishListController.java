@@ -30,7 +30,7 @@ public class WishListController {
                              @RequestParam("linkToWish") String linkToWish, HttpSession session){
 
     User user = (User) session.getAttribute("user");
-    WishRepository.addWish(nameWish, Integer.parseInt(price), Integer.parseInt(quantity), linkToWish, user.getId());
+    WishRepository.addWish(nameWish, Integer.parseInt(quantity), Integer.parseInt(price), linkToWish, user.getId());
 
         return "createWish.html";
     }
@@ -47,6 +47,18 @@ public class WishListController {
 
        return "seeWishlist.html";
 
+    }
+
+    @GetMapping("deleteWishList")
+    public String deleteWishes(HttpSession session){
+
+
+        User user = (User) session.getAttribute("user");
+
+        WishRepository.deleteWishlist(user.getId());
+
+
+        return "seeWishlist.html";
     }
 
     @GetMapping("/return-frontPage")
