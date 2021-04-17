@@ -148,12 +148,19 @@ nav a:hover{
 }
 
 .login{
+  background-color: #5b83ad;
+  color: white;
   width: 30%;
   padding: 5px;
   border: 1px solid #5b83ad;
   border-radius: 10px;
   margin: 15px;
   resize: vertical;
+  cursor: pointer;
+}
+
+.login:hover{
+  color: #2159e8;
 }
 
 input[type=text], select, textarea, input[type=name]{
@@ -190,8 +197,8 @@ input[type=submit]:hover {
 }
 
 .checkbox{
-  width: 70%;
-  padding-top: 2vw;
+  width: 79%;
+  padding-top: 1vw;
 
 }
 
