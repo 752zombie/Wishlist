@@ -6,13 +6,16 @@
 </head>
 <body>
 
+<form action="/return-frontPage" method="get">
+    <button type="submit"> Return </button>
+</form>
 
 <ul th:each="wish : ${wishlist}">
     <li>
         <div class="wishlist">
             <h1 class="wish-name" th:text="${wish.name}"></h1>
-            <label for="wish-price">Price: </label>
-            <span class="wish-price" id="wish-price" th:text="${wish.price}">kroner</span><br>
+            <label for="wish-price">Price(kr): </label>
+            <span class="wish-price" id="wish-price" th:text="${wish.price}"></span><br>
             <label for="wish-url"> Link: </label>
             <span class="wish-url" id="wish-url" th:text="${wish.url}"></span><br>
             <label for="wish-quantity"> Quantity: </label>
@@ -22,9 +25,7 @@
 </ul>
 
 
-<form action="/return-frontPage" method="get">
-    <button type="submit"> Return </button>
-</form>
+
 
 
 </body>

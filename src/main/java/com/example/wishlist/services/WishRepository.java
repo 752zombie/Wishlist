@@ -59,11 +59,10 @@ public class WishRepository {
 
     public static ArrayList<Wish> getWishList(int userid) {
         Connection connection = DatabaseConnection.getConnection();
-      //  Wishlist wishlist = new Wishlist();
         ArrayList<Wish> wishlist = new ArrayList<>();
 
         try {
-            ArrayList<Wish> wishes = new ArrayList<>();
+
             String command = String.format("SELECT * FROM wishes WHERE user_id = %d", userid);
             PreparedStatement statement = connection.prepareStatement(command);
             ResultSet resultSet = statement.executeQuery();
