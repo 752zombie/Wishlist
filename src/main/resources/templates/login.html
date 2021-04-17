@@ -10,7 +10,7 @@
 <div th:replace="fragments/header :: header"></div>
 <div class="content-area">
 <h1> Login </h1>
-<form action="/sign-in" method="post">
+    <form action="/sign-in" method="post">
 
     <div>
         <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required>
@@ -22,12 +22,14 @@
     </div>
 
     <div class="checkbox">
-        <input type="checkbox" value="remember-me"> Husk mig
+        <input type="checkbox" value="remember-me"> Remember me
     </div>
 
-</form>
+     <button class="login" type="submit">Login</button>
 
-    <a href="/sign-up" class="button2" methods="get">Not a user yet? Click here to sign up</a>
+    </form>
+
+    <a href="/sign-up" class="sign-up" methods="get">Not a user yet? Click here to sign up</a>
 
 </div>
 <!--footer.html  that's here  -->

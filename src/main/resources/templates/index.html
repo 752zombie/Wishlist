@@ -6,65 +6,31 @@
   <link rel="stylesheet" href="frontpage.css">
 </head>
 <body>
-
-<div class="box-area">
-  <header>
-    <div class="wrapper">
-      <div class="logo">
-        <a href="/">
-          <img src="img/logo.jpeg" alt="Frontpage" style="max-width: 130%; min-height: 150%">
-        </a>
-      </div>
-
-      <nav>
-        <div class="dividers">
-          <div class="options" th:if="${session.user == null}">
-            <a href="/sign-in" methods="get">Sign in</a>
-            <a th:text="${session.user}"></a>
-
-          </div>
-          <div class="options" th:if="${session.user != null}">
-            <a href="/changeUserInfo" th:text="${session.user.getName()}"></a>
-            <a href="/sign-out" methods="get"> Sign out </a> <a href="#"></a>
-            <a href="/wish-list" methods="get"> Create wish list</a> <a href="#"></a>
-          </div>
-
-
-          </div>
-      </nav>
-        </div>
-  </header>
-    </div>
-
-</div>
-</header>
-<div class="banner-area">
-  <div class="wrapper">
-    <h2>WISH LIST</h2>
-  </div>
-</div>
-<div class="white-bar"></div>
-</div>
-
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
 
 
 
 <div class="content-area">
   <div class="wrapper">
     <h2>Why Wishlist?</h2>
-    <p>spar tid og undgå at købe uønsket gaver!
-    </p>
+    <p>Create your wishlist and share it with family and friends and let friends
+       and family share theirs with you. Save time and money With our digital
+       wishlist and get or buy the perfect gifths to your loved ones </p>
   </div>
 </div>
 
-<div class="noncontent-area-mid" style="height: 100px">
-</div>
 
 <div class="content-area">
   <div class="wrapper">
     <h2>Signup now!</h2>
-    <p>SignUp now and save 15% on your next order!
-    </p>
+    <p>Don't miss out on great deals and discounts! SignUp now and save 15% on your next order!
+   <br> 1. Signup  2. Create your wishlist 3. Share it with family and friends.</p>
+
+
+
+    <a href="/sign-up" class="signup-fp" methods="get"> Click here to sign up</a>
+
   </div>
 </div>
 

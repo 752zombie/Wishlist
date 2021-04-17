@@ -26,25 +26,7 @@ header {
 .logo{
   width: 25%;
   height: 70px;
- float: left ;
-
-}
-
-nav {
-  float: right;
-  line-height: 150px;
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 1.5vw;
-  color: white;
-}
-
-nav a:hover {
-  color: #6998c8;
+  position: relative;
 }
 
 .dividers {
@@ -52,21 +34,29 @@ nav a:hover {
   font-size: 20px;
 }
 
+.white-bar {
+  top: 100px;
+  width: 100%;
+  position: fixed;
+  background: white;
+  height: 40px;
+}
 
 .content-area {
   color: #5b83ad;
   width: 100%;
   position: relative;
-  top: 150px;
+  top: 100px;
   background: white;
   height: auto;
   padding: 50px;
+
 }
 
 .content-area h1 {
   color: #5b83ad;
   letter-spacing: 0px;
-  font-size: 2vw;
+  font-size: 3vw;
   padding-bottom: 20px;
 
 }
@@ -75,10 +65,7 @@ nav a:hover {
   color: #5b83ad;
   letter-spacing: 0px;
   font-size: 2vw;
-
 }
-
-
 
 .content-area p {
   padding-top: 1vw;
@@ -89,6 +76,7 @@ nav a:hover {
   margin-right: 15%;
   margin-left: 15%;
   text-align: justify;
+
 }
 
 
@@ -97,35 +85,94 @@ nav a:hover {
   height: 300px;
 }
 
-
 * {
   box-sizing: border-box;
 }
-.button{
+
+.signup-fp{
   background-color:white;
   width: 15%;
   border: 1px solid #ccc;
   border-radius: 10px;
   color: #5b83ad;
-  padding: 5px 15px;
+  padding: 5px 15px 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 2px 1px;
+}
+
+.signup{
+  background-color: #5b83ad;
+  color: white;
+  width: 30%;
+  border: 1px solid #5b83ad;
+  border-radius: 10px;
+  padding: 5px 15px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 10px;
   cursor: pointer;
 
 }
-.button:hover{
+
+.signup:hover{
+  color: #2159e8;
+}
+
+.sign-up{
+color: #0e1ca8;
+  padding-top: 10px;
+  font-size: 1vw;
+}
+nav {
+  float: right;
+  line-height: 20px;
+  margin-right: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 1.5vw;
+  color: white;
+}
+
+nav a:hover{
+  color: #6998c8;
+}
+
+.signup-fp:hover{
   color: #405c7a;
 }
+
+.login{
+  width: 30%;
+  padding: 5px;
+  border: 1px solid #5b83ad;
+  border-radius: 10px;
+  margin: 15px;
+  resize: vertical;
+}
+
+input[type=text], select, textarea, input[type=name]{
+  width: 30%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 15px;
+  resize: vertical;
+}
+
+
 
 input[type=text], select, textarea, input[type=email] {
   width: 30%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   resize: vertical;
 }
 
@@ -134,25 +181,19 @@ input[type=text], select, textarea, input[type=password] {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin-top: 15px;
   resize: vertical;
 }
 
-
-
 input[type=submit]:hover {
-  background-color: #5b83ad;
+  background-color: #0e1ca8;
 }
 
 .checkbox{
-  padding: 15px;
-  width: 77%;
-}
+  width: 70%;
+  padding-top: 2vw;
 
-.button2{
-  padding: 10px;
-  width: 77%;
 }
-
 
 .contact-info {
   float: right;
