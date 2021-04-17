@@ -4,6 +4,7 @@ package com.example.wishlist.controllers;
 import com.example.wishlist.models.User;
 import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,7 +54,9 @@ public class LoginController {
         //incorrect email or password
         catch (NoSuchElementException e) {
             //handle this situation here
-            return "login";
+
+
+            return "loginFailed";
         }
     }
 

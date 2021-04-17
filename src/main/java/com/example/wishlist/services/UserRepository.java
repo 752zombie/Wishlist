@@ -98,6 +98,7 @@ public class UserRepository {
         }
 
         catch (SQLException e) {
+
             System.out.println("Something went wrong");
         }
 
