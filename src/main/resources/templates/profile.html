@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile page</title>
-    <link rel="stylesheet" href="frontpage.css">
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
-<a href="/wish-list" methods="get">Edit wishlist</a>
-<a href="/change-user-info" methods="get">Change name, email or password</a>
+        <div th:replace="fragments/header :: header"></div>
+
+        <div class="content-area">
+            <a href="/wish-list" methods="get">Edit wishlist</a>
+            <a href="/change-user-info" methods="get">Change name, email or password</a>
+
+
+            <div class="button-container">
+                <img src="img/blue.jpeg" alt="edit-wishlist" width="250px" height="250px">
+                <a href="/wish-list" methods="get">Edit wishlist</a>
+
+                 </div>
+
+        </div>
 </body>
 </html>

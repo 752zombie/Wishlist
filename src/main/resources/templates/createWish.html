@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
+
+
+
+<div class="content-area">
 
 <ul th:each="wishList : ${wishList}">
     <li th:text="${wishList}"></li>
@@ -13,22 +20,29 @@
    <h1>  Add wish </h1>
 
    <form action="/wish-saved" method="post">
-
-       <input type="text" class="form-control" name="nameWish" id="nameWish" placeholder="Name" autofocus required>
-
-       <input type="text" class="form-control" name="price" id="price" placeholder="Price" required>
-
-       <input type="text" class="form-control" name="quantity" id="quantity" placeholder="How many" required>
-
-       <input type="text" class="form-control" name="linkToWish" id="linkToWish" placeholder="Insert link to wish"
+        <div>
+            <input type="text" class="input" name="nameWish" id="nameWish" placeholder="Name" autofocus required>
+        </div>
+        <div>
+             <input type="text" class="input" name="price" id="price" placeholder="Price" required>
+        </div>
+        <div>
+             <input type="text" class="input" name="quantity" id="quantity" placeholder="How many" required>
+        </div>
+        <div>
+             <input type="text" class="input" name="linkToWish" id="linkToWish" placeholder="Insert link to wish"
               required>
-       <button class="saveWish" type="submit">Save</button>
+        </div>
+        <div/>
+        <div>
+            <button class="signup" type="submit">Save</button>
+        </div>
    </form>
 
 
-   <form action="/see-wishlist" method="get">
-           <button type="submit"> Finish </button>
+   <form action="/return-frontPage" method="get">
+           <button class="finish" type="submit"> Finish </button>
    </form>
-
+</div>
 </body>
 </html>
