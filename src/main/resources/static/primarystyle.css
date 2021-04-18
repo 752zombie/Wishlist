@@ -136,7 +136,23 @@ color: #0e1ca8;
   padding-top: 10px;
   font-size: 1vw;
 }
+.finish{
+  background-color:#ccc;
+  width: 10%;
+  border: 1px solid #7f8389;
+  border-radius: 10px;
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 20%;
+  cursor: pointer;
+}
 
+.finish:hover{
+  background-color: #7f8389;
+}
 .pnav{
   text-decoration: none;
   letter-spacing: 2px;
@@ -146,7 +162,7 @@ color: #0e1ca8;
 }
 
 .pnav:hover{
-  color: #ad0c1a;
+  color: #6998c8;
 }
 nav {
   float: right;
@@ -190,8 +206,6 @@ input[type=text], select, textarea, input[type=name]{
   resize: vertical;
 }
 
-
-
 input[type=text], select, textarea, input[type=email] {
   width: 30%;
   padding: 12px;
@@ -215,9 +229,8 @@ input[type=submit]:hover {
 }
 
 .checkbox{
-  width: 79%;
+  margin-right: 21%;
   padding-top: 1vw;
-
 }
 
 .contact-info {
