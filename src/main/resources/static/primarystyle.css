@@ -74,6 +74,13 @@ header {
   padding-bottom: 10px;
 }
 
+.content-area h5 {
+  color: #ad0c1a;
+  letter-spacing: 0px;
+  font-size: 1.5vw;
+  padding-bottom: 10px;
+}
+
 .content-area p {
   padding-top: 1vw;
   padding-bottom: 1vw;
