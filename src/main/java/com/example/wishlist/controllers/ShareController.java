@@ -48,7 +48,6 @@ public class ShareController {
         User user = (User) session.getAttribute("user");
 
        ArrayList<SharedWish> sharedWishes = ShareRepository.getSharedWishList(user.getId());
-        System.out.println(sharedWishes.get(0).getName());
 
         model.addAttribute("sharedWishes", sharedWishes);
 

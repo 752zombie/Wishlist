@@ -15,8 +15,7 @@ public class ShareRepository {
     public static void shareWishlist(String receiverName, ArrayList<Wish> wishes, int userId) {
 
         Connection connection = DatabaseConnection.getConnection();
-        System.out.println(wishes.get(0).getName());
-        System.out.println(receiverName);
+
         try {
             for (int i = 0; i < wishes.size(); i++) {
                 int receiverId = getReceiverId(receiverName);
@@ -105,5 +104,19 @@ public class ShareRepository {
             System.out.println("something went wrong");
         }
         return sharer_name;
+    }
+
+    public static void deleteSharelist(int userid) {
+        Connection connection = DatabaseConnection.getConnection();
+
+        try {
+            String command = String.format("DELETE FROM shared_list WHERE sharing_user_id = %d", userid);
+            PreparedStatement statement = connection.prepareStatement(command);
+            statement.executeUpdate();
+        }
+
+        catch (SQLException e) {
+            System.out.println("Error deleting shared list");
+        }
     }
 }
