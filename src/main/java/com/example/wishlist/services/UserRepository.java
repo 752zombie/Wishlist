@@ -96,52 +96,6 @@ public class UserRepository {
     }
 
 
-    public static void shareWishlist(String username, ArrayList<Wish> wishes) {
-
-        Connection connection = DatabaseConnection.getConnection();
-
-        int userId = getUserId(username);
-
-        System.out.println(userId);
-/*
-        try {
-            for (int i = 0; i < wishes.size(); i++) {
-
-                String command = String.format("INSERT INTO shared_wishlist (username, email, user_password) VALUES ('%s', '%s', MD5('%s'))", name);
-                PreparedStatement statement = connection.prepareStatement(command);
-                statement.execute();
-            }
-        } catch (SQLException e) {
-            System.out.println("Error adding user");
-
-        }
-
- */
-    }
-
-    private static int getUserId(String username) {
-
-        Connection connection = DatabaseConnection.getConnection();
-
-
-        try {
-            String command = String.format("SELECT  FROM users WHERE username = '%s')", username);
-            PreparedStatement statement = connection.prepareStatement(command);
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                int id = resultSet.getInt("user_id");
-
-
-                return id;
-            }
-        } catch (SQLException s) {
-            System.out.println("Something went wrong finding user id");
-        }
-        return 0;
-    }
-
-
     private static String userAttributeToColumn(UserAttribute attribute) {
         switch (attribute) {
             case name:

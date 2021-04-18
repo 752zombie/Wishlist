@@ -2,6 +2,7 @@ package com.example.wishlist.controllers;
 
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.Wish;
+import com.example.wishlist.services.ShareRepository;
 import com.example.wishlist.services.WishRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,7 +67,7 @@ public class WishListController {
         User user = (User) session.getAttribute("user");
 
         WishRepository.deleteWishlist(user.getId());
-
+        ShareRepository.deleteSharelist(user.getId());
 
         return "seeWishlist.html";
     }
