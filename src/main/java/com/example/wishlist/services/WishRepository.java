@@ -16,7 +16,6 @@ public class WishRepository {
         try {
 
             String command = String.format("INSERT INTO wishes (product_name, url, quantity, price, user_id) values ('%s', '%s', '%d', '%d', %d)", wishName, url, quantity, price, userId);
-            System.out.println(command);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
 

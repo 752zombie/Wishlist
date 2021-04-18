@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="primarystyle.css">
+</head>
+<body>
+
+    <div th:replace="fragments/header :: header"></div>
+    <div th:replace="fragments/seeWishlist :: seeWishlist"></div>
+
+    <div class="content-area">
+    <div>
+        <form action="/share-list" method="get">
+            <button class="login" type="submit"> Share my list </button>
+        </form>
+    </div>
+
+
+    <div>
+        <form action="/seeSharedWish" method="get">
+            <button class="login" type="submit"> Want to see if someone shared their list? </button>
+        </form>
+    </div>
+    <div th:replace="fragments/createWish :: createWish"></div>
+    </div>
+
+
+
+</body>
+</html>

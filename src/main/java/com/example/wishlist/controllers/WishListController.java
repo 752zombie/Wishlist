@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 @Controller
 public class WishListController {
@@ -37,7 +36,7 @@ public class WishListController {
        WishRepository.addWish(nameWish, Integer.parseInt(quantity), Integer.parseInt(price), linkToWish, user.getId());
 
 
-       return "createWish.html";
+       return "redirect:/see-wishlist";
    }
 
    catch (NumberFormatException n){
@@ -56,7 +55,7 @@ public class WishListController {
        model.addAttribute("wishlist", wishlist);
 
 
-       return "seeWishlist.html";
+       return "wishPage";
 
     }
 
@@ -69,7 +68,7 @@ public class WishListController {
         WishRepository.deleteWishlist(user.getId());
         ShareRepository.deleteSharelist(user.getId());
 
-        return "seeWishlist.html";
+        return "redirect:/see-wishlist";
     }
 
     @GetMapping("/return-frontPage")

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
+</head>
+<body>
+
+<div th:fragment="createWish">
+<div class="content-area">
+
+<ul th:each="wishList : ${wishList}">
+    <li th:text="${wishList}"></li>
+</ul>
+
+   <h1>  Add wish </h1>
+
+   <form action="/wish-saved" method="post">
+        <div>
+            <input type="text" class="input" name="nameWish" id="nameWish" placeholder="Name" autofocus required>
+        </div>
+        <div>
+             <input type="text" class="input" name="price" id="price" placeholder="Price" required>
+        </div>
+        <div>
+             <input type="text" class="input" name="quantity" id="quantity" placeholder="How many" required>
+        </div>
+        <div>
+             <input type="text" class="input" name="linkToWish" id="linkToWish" placeholder="Insert link to wish"
+              required>
+        </div>
+        <div/>
+        <div>
+            <button class="signup" type="submit">Save</button>
+        </div>
+   </form>
+
+
+   <form action="/return-frontPage" method="get">
+           <button class="finish" type="submit"> Finish </button>
+   </form>
+</div>
+</div>
+</body>
+</html>

@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-<!--header.html  that's here  -->
-<div th:replace="fragments/header :: header"></div>
-<div class="bar" >
+<div th:fragment="seeWishlist">
+
+<div class="bar">
 
         <a href="/return-frontPage" class="wishbar" methods="get"> Return </a>
         <a href="/deleteWishList" class="wishbar" methods="get"> Delete list</a>
-        <a href="/wish-list" class="wishbar" methods="get"> Add wishes</a>
         <a href="/share-list" class="wishbar" methods="get"> Share list </a>
 </div>
 <div>
@@ -31,10 +30,8 @@
         </div>
     </li>
 </ul>
-
-
-
+    </div>
 </div>
-
+</div>
 </body>
 </html>
