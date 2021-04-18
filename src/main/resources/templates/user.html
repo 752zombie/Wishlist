@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-
-
-
-
-  <p> What do you want to change? </p>
-  <div>
-    <form action="/change-user-name" method="get">
-<button type="submit"> Username </button>
-    </form>
- </div>
+        <!--header.html  that's here  -->
+        <div th:replace="fragments/header :: header"></div>
+        <div class="content-area">
+             <h2> What do you want to change? </h2>
+            <div>
+            <form action="/change-user-name" method="get">
+                <button class="login" type="submit"> Username </button>
+            </form>
+        </div>
 
   <div>
       <form action="/change-password" method="get">
-          <button type="submit"> Password </button>
+          <button class="login" type="submit"> Password </button>
       </form>
   </div>
 
   <div>
       <form action="/change-email" method="get">
-          <button type="submit"> Email </button>
+          <button class="login" type="submit"> Email </button>
       </form>
   </div>
 
@@ -32,21 +32,21 @@
 
   <div>
       <form action="/see-wishlist" method="get">
-          <button type="submit"> See your wishlist </button>
+          <button class="login" type="submit"> Show my wishlist </button>
       </form>
   </div>
 
 
   <div>
       <form action="/share-list" method="get">
-          <button type="submit"> Share list </button>
+          <button class="login" type="submit"> Share my list </button>
       </form>
   </div>
 
 
   <div>
       <form action="/seeSharedWish" method="get">
-          <button type="submit"> Want to see if someone shared their list? </button>
+          <button class="login" type="submit"> Want to see if someone shared their list? </button>
       </form>
   </div>
 

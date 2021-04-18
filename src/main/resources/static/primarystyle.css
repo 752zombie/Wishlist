@@ -42,23 +42,6 @@ header {
   height: 40px;
 }
 
-.button-container{
-  display:inline-block;
-  position:relative;
-  border-radius: 8px;
-margin: ;
-}
-
-.button-container a{
-  position: absolute;
-  bottom:2em;
-  right:2em;
-  background-color:#8F0005;
-  border-radius:1.5em;
-  color:white;
-  text-transform:uppercase;
-  padding:1em 1.5em;
-}
 
 .content-area {
   color: #5b83ad;
@@ -111,8 +94,38 @@ margin: ;
 
 }
 
+.bar{
+  height: 40px;
+  margin-top: 15px;
+  margin-right: 20px;
+  background: #b4b0b2;
+  width: 100%;
+  position: relative;
+}
 
+.wishbar{
+  border: black;
+  color: white;
+  padding: 20px 20px 20px;
+  font-size: 15px;
+}
 
+.share{
+  background-color:white;
+  width: 10%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.share:hover{
+  background-color: #5b83ad;
+  color: white;
+}
 .column{
   height: 300px;
 }
@@ -132,6 +145,7 @@ margin: ;
   text-decoration: none;
   font-size: 14px;
   margin: 2px 1px;
+
 }
 
 .signup-fp:hover{

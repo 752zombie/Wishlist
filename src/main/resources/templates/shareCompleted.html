@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
+<div class="content-area">
 <h1> Sharing completed </h1>
 
-<a href="/return-frontPage"> Return </a>
-
+<a href="/return-frontPage" class="share"> Return </a>
+</div>
 </body>
 </html>

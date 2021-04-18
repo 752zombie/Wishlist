@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
+<div class="content-area">
 
 <form action="/share-wishlist" method="post">
     <label for="receiverName"> Who do you want to share your wishlist with?</label>
     <input type="text" name="receiverName" id="receiverName" placeholder="Name of user">
-    <button type="submit"> Share </button>
+    <button class="share" type="submit"> Share </button>
 
 </form>
-
+</div>
 </body>
 </html>

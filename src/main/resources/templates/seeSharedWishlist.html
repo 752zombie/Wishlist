@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
-
-
-<a href="/return-frontPage" methods="get"> Return </a>
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
+<div class="content-area">
+<a href="/return-frontPage"class="share" methods="get"> Return </a>
 
 <ul th:each="wish : ${sharedWishes}">
     <li>
@@ -26,6 +28,6 @@
     </li>
 </ul>
 
-
+</div>
 </body>
 </html>

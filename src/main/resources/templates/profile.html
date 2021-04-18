@@ -9,16 +9,12 @@
         <div th:replace="fragments/header :: header"></div>
 
         <div class="content-area">
-            <a href="/wish-list" methods="get">Edit wishlist</a>
-            <a href="/change-user-info" methods="get">Change name, email or password</a>
+            <div>
+            <a href="/wish-list" class="signup-fp" methods="get">Edit wishlist</a>
 
-
-            <div class="button-container">
-                <img src="img/blue.jpeg" alt="edit-wishlist" width="250px" height="250px">
-                <a href="/wish-list" methods="get">Edit wishlist</a>
-
-                 </div>
-
+            <a href="/change-user-info" class="signup-fp" methods="get">Change name, email or password</a>
+            </div>
         </div>
+
 </body>
 </html>

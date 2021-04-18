@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="primarystyle.css">
 </head>
 <body>
+<!--header.html  that's here  -->
+<div th:replace="fragments/header :: header"></div>
+<div class="bar" >
 
-
-    <div>
-        <a href="/return-frontPage" methods="get"> Return </a>
-        <a href="/deleteWishList" methods="get"> Delete list</a>
-        <a href="/wish-list" methods="get"> Add wishes</a>
-        <a href="/share-list" methods="get"> Share list </a>
-    </div>
+        <a href="/return-frontPage" class="wishbar" methods="get"> Return </a>
+        <a href="/deleteWishList" class="wishbar" methods="get"> Delete list</a>
+        <a href="/wish-list" class="wishbar" methods="get"> Add wishes</a>
+        <a href="/share-list" class="wishbar" methods="get"> Share list </a>
+</div>
+<div>
+    <div class="content-area">
 
 <ul th:each="wish : ${wishlist}">
     <li>
         <div class="wishlist">
-            <h1 class="wish-name" th:text="${wish.name}"></h1>
+            <h2 class="wish-name" th:text="${wish.name}"></h2>
             <label for="wish-quantity"> Quantity: </label>
             <span class="wish-quantity" id="wish-quantity" th:text="${wish.quantity}"></span><br>
             <label for="wish-url"> Link: </label>
@@ -30,7 +34,7 @@
 
 
 
-
+</div>
 
 </body>
 </html>
