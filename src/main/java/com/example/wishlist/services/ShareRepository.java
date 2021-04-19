@@ -59,7 +59,7 @@ public class ShareRepository {
         Connection connection = DatabaseConnection.getConnection();
         ArrayList<SharedWish> wishes = new ArrayList<>();
 
-        int sharer_id = 0;
+        int sharer_id;
 
         try {
 
