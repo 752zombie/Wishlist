@@ -19,7 +19,6 @@ public class WishRepository {
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
 
-
         }
 
         catch (SQLException e) {
