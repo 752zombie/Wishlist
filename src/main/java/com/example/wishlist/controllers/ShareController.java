@@ -21,7 +21,7 @@ public class ShareController {
 
 
     @GetMapping("/share-list")
-    public String whoToShareWithForm(Model model){
+    public String whoToShareWithForm(){
 
         return "shareWishlist.html";
 
