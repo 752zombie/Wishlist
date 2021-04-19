@@ -9,7 +9,7 @@
         <div th:replace="fragments/header :: header"></div>
         <div class="content-area">
 
-          <form action="/change-user-name" method="post">
+          <form action="change-user-name" method="post">
               <div>
              <input type="name" class="form-control" name="name" id="name"
                     th:placeholder="${session.user.getName()}" autofocus required>
