@@ -45,7 +45,6 @@ public class User {
         this.password = password;
     }
 
-    public void editUser(){}
 
     @Override
     public String toString() {
