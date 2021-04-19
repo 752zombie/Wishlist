@@ -17,10 +17,10 @@ public class ShareRepository {
         Connection connection = DatabaseConnection.getConnection();
 
         try {
-            for (int i = 0; i < wishes.size(); i++) {
+            for (Wish wish : wishes) {
                 int receiverId = getReceiverId(receiverName);
 
-                String command = String.format("INSERT INTO shared_list (sharing_user_id, reciever_id, product_name, url, quantity, price) VALUES (%d, %d, '%s', '%s', %d, %d)", userId, receiverId, wishes.get(i).getName(), wishes.get(i).getUrl(), wishes.get(i).getQuantity(), wishes.get(i).getPrice());
+                String command = String.format("INSERT INTO shared_list (sharing_user_id, reciever_id, product_name, url, quantity, price) VALUES (%d, %d, '%s', '%s', %d, %d)", userId, receiverId, wish.getName(), wish.getUrl(), wish.getQuantity(), wish.getPrice());
                 PreparedStatement statement = connection.prepareStatement(command);
                 statement.executeUpdate();
 
