@@ -43,7 +43,7 @@ public class LoginController {
         return "index";
     }
 
-    @PostMapping("/sign-in")
+    @PostMapping("sign-in")
     public String signIn(@RequestParam("email") String email, @RequestParam("password") String password, HttpSession session) {
 
         try {
