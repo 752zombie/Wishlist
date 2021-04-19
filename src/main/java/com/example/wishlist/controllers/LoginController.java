@@ -1,25 +1,28 @@
 package com.example.wishlist.controllers;
 
-
 import com.example.wishlist.models.User;
 import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpSession;
 import java.util.NoSuchElementException;
 
 @Controller
 public class LoginController {
 
+    @GetMapping("/sign-out")
+    public String signOut(HttpSession session) {
+
+        session.invalidate();
+        return "redirect:/";
+    }
+
 
     @GetMapping("/sign-in")
     public String signIn(){
-
-        return "login.html";
+        return "login";
     }
 
     @PostMapping("/sign-up")
@@ -30,16 +33,14 @@ public class LoginController {
         if (UserRepository.addUser(name, eMail, password)) {
             User user = UserRepository.attemptLogin(eMail, password);
             session.setAttribute("user", user);
-
-
         }
 
         //User already exists
         else {
-            //add error handling here
+            return "signupFailed";
         }
 
-        return "index.html";
+        return "index";
     }
 
     @PostMapping("/sign-in")
@@ -53,9 +54,6 @@ public class LoginController {
 
         //incorrect email or password
         catch (NoSuchElementException e) {
-            //handle this situation here
-
-
             return "loginFailed";
         }
     }

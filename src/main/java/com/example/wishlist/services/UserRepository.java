@@ -2,10 +2,7 @@ package com.example.wishlist.services;
 
 import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserAttribute;
-import com.example.wishlist.models.Wish;
-
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class UserRepository {

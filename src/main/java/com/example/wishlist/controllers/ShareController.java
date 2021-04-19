@@ -23,7 +23,7 @@ public class ShareController {
     @GetMapping("/share-list")
     public String whoToShareWithForm(){
 
-        return "shareWishlist.html";
+        return "shareWishlist";
 
     }
 
@@ -37,7 +37,7 @@ public class ShareController {
         ShareRepository.shareWishlist(receiverName, wishes, user.getId());
 
 
-     return "shareCompleted.html";
+     return "shareCompleted";
 
     }
 

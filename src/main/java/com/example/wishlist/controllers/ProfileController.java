@@ -4,7 +4,6 @@ import com.example.wishlist.models.User;
 import com.example.wishlist.models.UserAttribute;
 import com.example.wishlist.services.UserRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

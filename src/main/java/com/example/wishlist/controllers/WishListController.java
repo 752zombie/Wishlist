@@ -20,7 +20,7 @@ public class WishListController {
     @GetMapping("/wish-list")
     public String createWish(){
 
-        return "createWish.html";
+        return "createWish";
 
     }
 
@@ -30,39 +30,31 @@ public class WishListController {
     public String createWish(@RequestParam("nameWish") String nameWish, @RequestParam("price") String price, @RequestParam("quantity") String quantity,
                              @RequestParam("linkToWish") String linkToWish, HttpSession session){
 
-   try {
+    try {
 
        User user = (User) session.getAttribute("user");
        WishRepository.addWish(nameWish, Integer.parseInt(quantity), Integer.parseInt(price), linkToWish, user.getId());
 
 
        return "redirect:/see-wishlist";
-   }
+    }
 
    catch (NumberFormatException n){
 
-       return "wishFailed.html";
+       return "wishFailed";
    }
     }
 
     @GetMapping("see-wishlist")
     public String seeWishlist(HttpSession session, Model model){
-
        User user = (User) session.getAttribute("user");
-
        ArrayList<Wish> wishlist = WishRepository.getWishList(user.getId());
-
        model.addAttribute("wishlist", wishlist);
-
-
        return "wishPage";
-
     }
 
     @GetMapping("deleteWishList")
     public String deleteWishes(HttpSession session){
-
-
         User user = (User) session.getAttribute("user");
 
         WishRepository.deleteWishlist(user.getId());
@@ -71,10 +63,5 @@ public class WishListController {
         return "redirect:/see-wishlist";
     }
 
-    @GetMapping("/return-frontPage")
-    public String returnFrontpage(){
-
-        return "redirect:/";
-    }
 
 }
