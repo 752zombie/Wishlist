@@ -14,10 +14,10 @@
 <ul th:each="wish : ${sharedWishes}">
     <li>
         <div class="sharedWishes">
-            <h1 class="wish-name" th:text="${wish.sharer_name}"></h1>
+            <h1 class="wish-name" th:text="${wish.sharerName}"></h1>
 
             <label for="wish-product_name"> Product name : </label>
-            <span class="wish-product_name" id="wish-product_name" th:text="${wish.name}"></span><br>
+            <span class="wish-product_name" id="wish-product_name" th:text="${wish.sharerName}"></span><br>
             <label for="wish-quantity"> Quantity: </label>
             <span class="wish-quantity" id="wish-quantity" th:text="${wish.quantity}"></span><br>
             <label for="wish-url"> Link: </label>

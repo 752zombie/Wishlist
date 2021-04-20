@@ -42,8 +42,6 @@ public class DatabaseConnection {
         }
 
         try {
-
-            System.out.println("user " + userStatic + " password " + passwordStatic + " url " + urlStatic);
             connection = DriverManager.getConnection(urlStatic, userStatic, passwordStatic);
         }
 
