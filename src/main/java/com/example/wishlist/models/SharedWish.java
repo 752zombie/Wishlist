@@ -2,22 +2,22 @@ package com.example.wishlist.models;
 
 public class SharedWish {
 
-    private String sharer_name;
-    private String product_name;
+    private String sharerName;
+    private String productName;
     private String url;
     private int quantity;
     private int price;
 
     public SharedWish(String sharer_name, String product_name, String url, int quantity, int price) {
-        this.sharer_name = sharer_name;
+        this.sharerName = sharer_name;
         this.quantity = quantity;
-        this.product_name = product_name;
+        this.productName = product_name;
         this.url = url;
         this.price = price;
     }
 
-    public String getSharer_name() {
-        return sharer_name;
+    public String getSharerName() {
+        return sharerName;
     }
 
     public int getQuantity() {
@@ -25,7 +25,7 @@ public class SharedWish {
     }
 
     public String getName() {
-        return product_name;
+        return productName;
     }
 
     public String getUrl() {
@@ -36,8 +36,8 @@ public class SharedWish {
         return price;
     }
 
-    public void setSharer_name(String sharer_name) {
-        this.sharer_name = sharer_name;
+    public void setSharerName(String sharerName) {
+        this.sharerName = sharerName;
     }
 
     public void setQuantity(int quantity) {
@@ -47,16 +47,16 @@ public class SharedWish {
     @Override
     public String toString() {
         return "SharedWish{" +
-                "sharer_name='" + sharer_name + '\'' +
+                "sharer_name='" + sharerName + '\'' +
                 ", quantity=" + quantity +
-                ", product_name='" + product_name + '\'' +
+                ", product_name='" + productName + '\'' +
                 ", url='" + url + '\'' +
                 ", price=" + price +
                 '}';
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public void setUrl(String url) {

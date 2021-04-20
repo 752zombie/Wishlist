@@ -106,7 +106,7 @@ public class ShareRepository {
         return sharer_name;
     }
 
-    public static void deleteSharelist(int userid) {
+    public static void deleteSharedList(int userid) {
         Connection connection = DatabaseConnection.getConnection();
 
         try {

@@ -48,7 +48,7 @@ public class WishRepository {
             String command = String.format("DELETE FROM wishes WHERE user_id = %d", userid);
             PreparedStatement statement = connection.prepareStatement(command);
             statement.execute();
-            ShareRepository.deleteSharelist(userid);
+            ShareRepository.deleteSharedList(userid);
         }
 
         catch (SQLException e) {

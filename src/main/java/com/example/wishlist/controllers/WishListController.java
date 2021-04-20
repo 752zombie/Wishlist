@@ -58,7 +58,7 @@ public class WishListController {
         User user = (User) session.getAttribute("user");
 
         WishRepository.deleteWishlist(user.getId());
-        ShareRepository.deleteSharelist(user.getId());
+        ShareRepository.deleteSharedList(user.getId());
 
         return "redirect:/see-wishlist";
     }
